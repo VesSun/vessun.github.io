@@ -5,14 +5,18 @@ body {
 	font: 14px Verdana;
 }
 
-#content {
-	margin: 0 auto;
-	padding-top: 55px;
-	width: 600px;
+.whole{
+width: 100%;	
 }
+
+.right{
+	float: right;
+	width: 30%;
+	height: 100%;
+}
+
 #name {
-	margin: 0 auto;
-	width: 400px;
+	float: right;
 	font-size: 40px;
 	text-shadow: 0 3px 0 #000, 0 3px 5px #dedede ;
 }
@@ -22,21 +26,36 @@ body {
 	font-size: 25px;
 	font-style: italic;
 }
-
-
-#contact a {
-	font-size: 20px;
-	font-weight: bold;
-	color: #dedede;
-	text-decoration: none;
-	text-shadow: 0 1px 0 #000, 0 3px 5px #dedede;
+.picture_right{
+	float:right;
+	height: 290px;
+	width: 200px;
+	padding-right: 10px;
+}
+#contact{
+	padding-top: 50px;
+	float:right;
 }
 
-#contact a:hover {
-	color: #9f9f9f;
+#switch{
+	float:right;
+	margin-left: 190px;
+	
+  }
 
+.left{
+	float:left;
+	width: 70%
 }
 
-#contact p {
-	text-align: center;
+.picture{
+	float:left;
+	height: 590px;
+	width: 690px;
+	padding: 3px;
+	margin-top: 30px;
+	margin-left: 15px;
+	border-color: #BCC6CC;
+	border-width:5px;
+	border-style:groove;
 }
