@@ -5,11 +5,11 @@ body {
 	font: 14px Verdana;
 }
 
-.whole{
-width: 100%;	
+.whole {
+	width: 100%;	
 }
 
-.right{
+.right {
 	float: right;
 	width: 30%;
 	height: 100%;
@@ -26,33 +26,33 @@ width: 100%;
 	font-size: 25px;
 	font-style: italic;
 }
-.picture_right{
+.picture_right {
 	float:right;
 	height: 290px;
 	padding-right: 10px;
 }
-#contact{
+#contact {
 	padding-top: 50px;
 	float:right;
 	width: 100%;
 }
 
-#contact p{
+#contact p {
 	float:right;
 }
 
-#switch{
+#switch {
 	float:right;
 	margin-left: 190px;
 	
   }
 
-.left{
+.left {
 	float:left;
 	width: 70%
 }
 
-.picture{
+.picture {
 	float:left;
 	height: 590px;
 	width: 690px;
