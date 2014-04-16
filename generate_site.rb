@@ -8,7 +8,7 @@ site = '<!DOCTYPE html>
 </head>
 <body>
 	<div class="right">
-		<h1 id="name">"%{name}"</h1>
+		<h1 id="name">%{name}</h1>
 		
 		<div id="quote">
 			%{quote}
