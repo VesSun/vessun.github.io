@@ -1,9 +1,6 @@
 # encoding: utf-8
 
-site = File.read('site.html')
-
-
-translations = {
+Dict = {
 	:bg => {
 		:page_title => 'Веселина Агова',
 		:name => 'Веселина Агова',
@@ -24,32 +21,6 @@ translations = {
 		:switch_adr => '../bg/index.html',
 		:switch_pic => '../images/icons/bulgaria_button.png',
 		:switch_title => 'switch on bg',
-	},
-
-	:de =>{
-		:page_title => 'Wesselina Agowa',
-		:name => 'Wesselina Agowa',
-		:quote => '<p>Diese Seite ist nur für Test</p>
-					<p>Mehr zu kommen: bald</p>',
-		:picture_right =>'../images/Contacts.png',
-		:switch_adr => '../bg/index.html',
-		:switch_pic => '../images/icons/bulgaria_button.png',
-		:switch_title => 'switch on bg',
 	}
 }
 
-
-translations.each do |language, text|
-File.write "#{language}/index.html", site % text
-end
-
-
-#bg_html = site % translations[:bg]
-#en_html = site % translations[:en]
-#de_html = site % translations[:de]
-
-#File.write "./en/index.html", en_html
-#File.write "./bg/index.html", bg_html
-#File.write "./de/index.html", de_html
-
-puts "Job done"
