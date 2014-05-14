@@ -1,47 +1,13 @@
 # encoding: utf-8
+require 'yaml'
 
-site = File.read('site.html')
+site = File.read('site_template.html')
+translations = YAML.load_file('translations.yaml')
 
-
-translations = {
-	:bg => {
-		:page_title => 'Веселина Агова',
-		:name => 'Веселина Агова',
-		:quote => '<p>Тази страница е тестова.</p>
-					<p>Новости: Скоро!</p>',
-		:picture_right => '../images/Vruzki.png',
-		:switch_adr => '../en/index.html',
-		:switch_pic => '../images/icons/english-button.png',
-		:switch_title => 'switch on eng',
-	},
-
-	:en => {
-		:page_title => 'Vesselina Agova',
-		:name => 'Vesselina Agova',
-		:quote => '<p>This page is only a test.</p>
-					<p>More to come: Soon!</p>',
-		:picture_right =>'../images/Contacts.png',
-		:switch_adr => '../bg/index.html',
-		:switch_pic => '../images/icons/bulgaria_button.png',
-		:switch_title => 'switch on bg',
-	},
-
-	:de =>{
-		:page_title => 'Wesselina Agowa',
-		:name => 'Wesselina Agowa',
-		:quote => '<p>Diese Seite ist nur für Test</p>
-					<p>Mehr zu kommen: bald</p>',
-		:picture_right =>'../images/Contacts.png',
-		:switch_adr => '../bg/index.html',
-		:switch_pic => '../images/icons/bulgaria_button.png',
-		:switch_title => 'switch on bg',
-	}
-}
-
-
-translations.each do |language, text|
-File.write "#{language}/index.html", site % text
+translations.each do |language, strings|
+	File.write "#{language}/index.html", site % strings
 end
+
 
 
 #bg_html = site % translations[:bg]
