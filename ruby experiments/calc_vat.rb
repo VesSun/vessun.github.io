@@ -1,6 +1,7 @@
 print "How many items? "
 items = gets.chomp.to_i
 sum = 0
+rows = " "
 
 items.times do
   print "Whats the item? "
@@ -13,11 +14,27 @@ items.times do
   bill_noVAT = price * numb_item
   puts "your bill is #{bill_noVAT}$"
   sum += bill_noVAT   #<= same as "sum = sum + bill_noVAT"
+  rows = rows + "<tr>
+      <td>#{item}</td>
+      <td>#{price}</td>
+      <td>#{numb_item}</td>
+        </tr>"
 end
-puts "your bill without VAT is #{sum}"
+puts "your bill without VAT is #{sum.round(3)}"
 
 VAT = sum * 0.2
-puts "your VAT is #{VAT}$"
+puts "your VAT is #{VAT.round(3)}$"
 
 bill_VAT = sum + VAT #same as "sum*1.2"
-puts "your bill with VAT is #{bill_VAT}$"
+puts "your bill with VAT is #{bill_VAT.round(3)}$"
+
+values ={
+  sum: sum.round(3),
+  VAT: VAT.round(3),
+  sum_VAT: bill_VAT.round(3),
+  rows: rows
+}
+
+calculator = File.read('vat_template.html')
+File.write "calc_vat.html", calculator % values
+
