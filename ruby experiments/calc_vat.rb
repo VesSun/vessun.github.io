@@ -15,10 +15,10 @@ items.times do
   puts "your bill is #{bill_noVAT}$"
   sum += bill_noVAT   #<= same as "sum = sum + bill_noVAT"
   rows = rows + "<tr>
-      <td>#{item}</td>
-      <td>#{price}</td>
-      <td>#{numb_item}</td>
-        </tr>"
+      <td style=\"text-align:center\">#{item}</td>
+      <td style=\"text-align:center\">#{numb_item}</td>
+      <td style=\"text-align:center\">#{price}$</td>
+                </tr>"
 end
 puts "your bill without VAT is #{sum.round(3)}"
 
