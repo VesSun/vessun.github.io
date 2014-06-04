@@ -1,7 +1,7 @@
 print "How many items? "
 items = gets.chomp.to_i
 sum = 0
-rows = " "
+rows = ""
 
 items.times do
   print "Whats the item? "
@@ -22,15 +22,15 @@ items.times do
 end
 puts "your bill without VAT is #{sum.round(3)}"
 
-VAT = sum * 0.2
+vat = sum * 0.2
 puts "your VAT is #{VAT.round(3)}$"
 
-bill_VAT = sum + VAT #same as "sum*1.2"
+bill_VAT = sum + vat #same as "sum*1.2"
 puts "your bill with VAT is #{bill_VAT.round(3)}$"
 
 values ={
   sum: sum.round(3),
-  VAT: VAT.round(3),
+  VAT: vat.round(3),
   sum_VAT: bill_VAT.round(3),
   rows: rows
 }
