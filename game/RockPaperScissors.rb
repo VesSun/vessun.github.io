@@ -4,6 +4,8 @@ answer = gets.chomp.capitalize
 turns = ['Rock', 'Paper', 'Scissors']
 
 
+
+
 if answer == "Two" or answer == "Two of us"
   puts "First of you: Rock Paper Scissors?"
   answer1 = gets.chomp.capitalize
@@ -71,13 +73,33 @@ else
 #   end
 # end
 
-  [["Rock", "Scissors"], ["Scissors", "Paper"], ["Paper", "Rock"]].each do |x|
-    if answer1 == x[0]
-      if answer2 == x[1]
-        puts "Player 1 played #{answer1} Player 1 wins"
-      else
-        puts "Player 1 played #{answer1} Player 2 wins"
-      end
-    end
-  end
+rules = {
+  'Rock' => 'Scissors',
+  'Scissors' => 'Paper',
+  'Paper' => 'Rock',
+}
+
+
+# rules['Rock'] == Scissors'
+
+
+if answer2 == rules[answer1]
+   puts "Player 1 played #{answer1} Player 1 wins"
+else
+   puts "Player 1 played #{answer1} Player 2 wins"
+end
+
+  # [
+  #   ["Rock", "Scissors"],
+  #   ["Scissors", "Paper"],
+  #   ["Paper", "Rock"]
+  # ].each do |x|
+  #   if answer1 == x[0]
+  #     if answer2 == x[1]
+  #       puts "Player 1 played #{answer1} Player 1 wins"
+  #     else
+  #       puts "Player 1 played #{answer1} Player 2 wins"
+  #     end
+  #   end
+  # end
 end
