@@ -83,10 +83,10 @@ rules = {
 # rules['Rock'] == Scissors'
 
 
-if answer2 == rules[answer1]
-   puts "Player 1 played #{answer1} Player 1 wins"
+if rules[answer1] == answer2
+  puts "Player 1 played #{answer1} Player 1 wins"
 else
-   puts "Player 1 played #{answer1} Player 2 wins"
+  puts "Player 1 played #{answer1} Player 2 wins"
 end
 
   # [
