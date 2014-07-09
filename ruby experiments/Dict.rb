@@ -12,24 +12,37 @@ end
 
 puts "Gimme a word to translate"
 loop do 
-  word = gets.chomp.capitalize
-  if word == ""
+  input = gets.chomp
+  if input == ""
     break
   end
-  if en_de_dict.has_key?(word)
-    puts "Word in DE: #{en_de_dict[word]}"
-  else
-    puts "No word in the dict"
+  words = input.split(' ')
+  translated_words = []
+
+  words.each do |word|
+    word = word.capitalize
+
+    if en_de_dict.has_key?(word)
+      translated_words.push(en_de_dict[word])
+    else
+      translated_words.push(word)
+    end
+
   end
 
-  de_en_dict = en_de_dict.invert
+  puts translated_words.join(' ')
+  
+  
+ 
 
-  if de_en_dict.has_key?(word)
-    puts "Word in EN #{de_en_dict[word]}"
+  # de_en_dict = en_de_dict.invert
 
-  else
-    puts "Keine solche Wort"
-  end
+  # if de_en_dict.has_key?(word)
+  #   puts "Word in EN #{de_en_dict[word]}"
+
+  # else
+  #   puts "Keine solche Wort"
+  # end
 
 end
 
