@@ -12,55 +12,42 @@ end
 
  de_en_dict = en_de_dict.invert
 
-puts "Gimme a word to translate"
+puts "En => De or De => En?"
+print "> "
+answer = gets.chomp.capitalize
+
+puts "Gimme a word to translate!"
 loop do 
   print "> "
   input = gets.chomp
-  if input == ""
-    break
-  end
-
-
-  translated_words = []
+  break if input == ""
 
   words = input.split(' ')
   words.each do |word|
   word = word.capitalize
   end
 
-  
-  if words.include?('(en)')
-    words.delete('(en)')
+  def new_words(dict, words)
+    translated_words = []
     words.each do |word|
-      word = word.capitalize
-      if en_de_dict.has_key?(word)
-        translated_words.push(en_de_dict[word])
+    word = word.capitalize
+      if dict.has_key?(word)
+        translated_words.push(dict[word])
       elsif
         translated_words.push(word)
       end
     end
-
-  elsif 
-    words.include?('(de)')
-    words.delete('(de)')
-    words.each do |word|
-      word = word.capitalize
-      if de_en_dict.has_key?(word)
-         translated_words.push(de_en_dict[word])
-      elsif
-        translated_words.push(word)
-      end
-    end
-  else 
-    words.each do |word|
-      word = word.capitalize
-      if en_de_dict.has_key?(word)
-        translated_words.push(en_de_dict[word])
-      elsif
-        translated_words.push(word)
-      end
-    end
+    translated_words
   end
 
-  puts translated_words.join(' ')
+  if answer == "En"
+    dict = en_de_dict
+  elsif 
+    answer == "De"
+    dict = de_en_dict
+  else 
+    dict = en_de_dict
+  end
+
+  puts new_words(dict, words).join(' ')
 end
